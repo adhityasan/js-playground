@@ -39,3 +39,14 @@ function getUserProfile(user) {
     }, 2000)
   })
 }
+
+// it's seem easier & readable to use async-await on using asynchronous action that need to be executed synchronously
+// and it seems like sychronous code syntax, but the async action need to return a Promise
+async function consoleProfile() {
+  const userId = await getUserId()
+  const user = await getUser(userId)
+  const profile = await getUserProfile(user)
+  console.log(profile)
+}
+
+consoleProfile()
