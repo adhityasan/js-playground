@@ -43,4 +43,19 @@ const callback_christmass_tree = () => {
   })
 }
 
-callback_christmass_tree()
+// to make it easier to read, you can replace all those unamed ES6 arrow function with named function
+const callback_named_function = () => {
+  function consoleUserProfile(profile) {
+    console.log(profile)
+  }
+  function handleUser(user) {
+    getUserProfile(user, consoleUserProfile)
+  }
+  function handlerUserId(userId) {
+    getUser(userId, handleUser)
+  }
+  getUserId(handlerUserId)
+}
+
+// callback_christmass_tree()
+callback_named_function()
