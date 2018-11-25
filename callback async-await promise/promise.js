@@ -39,3 +39,13 @@ function getUserProfile(user) {
     }, 2000)
   })
 }
+
+function consoleUserProfile(profile) {
+  console.log(profile)
+}
+
+getUserId()
+  .then(userId => getUser(userId))
+  .then(user => getUserProfile(user))
+  .then(profile => consoleUserProfile(profile))
+  .catch(err => console.log(err.message))
