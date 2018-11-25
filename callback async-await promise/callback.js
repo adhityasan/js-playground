@@ -31,3 +31,16 @@ function getUserProfile(user, callback) {
     callback(profile)
   }, 2000)
 }
+
+// it's a callback with problem named Christmass Tree, 
+const callback_christmass_tree = () => {
+  getUserId((userId) => {
+    getUser(userId, (user) => {
+      getUserProfile(user, (profile => {
+        console.log(profile)
+      }))
+    })
+  })
+}
+
+callback_christmass_tree()
